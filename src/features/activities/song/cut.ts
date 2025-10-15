@@ -6,6 +6,6 @@ export const cut = {
   title: 'Cut',
   description: 'Cuts out the value on the cursor or the entire selection. Note: This moves the rows after the value or selection.',
   media: { video: Video },
-  keypress: [['shift', 'edit']],
+  keypress: [['opt', 'edit']],
   categories: ['edit'],
 } as const satisfies Activity
