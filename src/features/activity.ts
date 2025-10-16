@@ -6,7 +6,7 @@ export interface Activity {
   title: string
   media?: { img: string } | { video: string }
   categories: ActivityCategoryId[]
-  keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold')[]
+  keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '2x' | '3x')[]
   description: ReactNode
 }
 
@@ -25,6 +25,10 @@ export const activityCategories = [
   {
     id: 'edit',
     title: 'Editing',
+  },
+  {
+    id: 'selection',
+    title: 'Selection',
   },
   {
     id: 'special',

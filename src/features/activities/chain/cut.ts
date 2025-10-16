@@ -1,4 +1,4 @@
-import Video from '#assets/activity/song/cut.webm'
+import Video from '#assets/activity/chain/cut.webm'
 import type { Activity } from '../../activity'
 
 export const cut = {

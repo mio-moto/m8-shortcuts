@@ -25,6 +25,12 @@ export const KeyCombo: FC<{ keypress: Activity['keypress']; id: string }> = ({ k
         if (key === 'hold') {
           return 'HOLD'
         }
+        if (key === '2x') {
+          return '2x'
+        }
+        if (key === '3x') {
+          return '3x'
+        }
         // biome-ignore lint/suspicious/noArrayIndexKey: static screen anyway
         return <Keypress key={`${id}-${i}`} keys={key} />
       })}

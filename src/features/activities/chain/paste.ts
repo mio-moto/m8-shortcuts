@@ -1,4 +1,4 @@
-import Video from '#assets/activity/song/paste.webm'
+import Video from '#assets/activity/chain/paste.webm'
 import type { Activity } from '../../activity'
 
 export const paste = {
