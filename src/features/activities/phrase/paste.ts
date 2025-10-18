@@ -1,10 +1,10 @@
-import Video from '#assets/activity/chain/paste.webm'
+import Video from '#assets/activity/phrase/paste.webm'
 import type { Activity } from '../../activity'
 
 export const paste = {
   id: 'paste-value',
   title: 'Paste',
-  description: 'When there are values in the clipboard, paste the selection.',
+  description: 'When there are values in the clipboard, paste the selection and overwrites values.',
   media: { video: Video },
   keypress: [['shift', 'edit']],
   categories: ['selection'],

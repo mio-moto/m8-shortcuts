@@ -1,4 +1,5 @@
 import Phrase from '#screens/phrase.png'
+import { phraseActivities } from '../activities/phrase/_phraseActivities'
 import type { M8Screen } from '../screen'
 
 export const phraseScreen = {
@@ -7,5 +8,5 @@ export const phraseScreen = {
   img: Phrase,
   categories: ['sequencer'],
   description: 'Phrase screen',
-  activities: [],
+  activities: phraseActivities,
 } as const satisfies M8Screen
