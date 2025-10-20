@@ -111,10 +111,19 @@ const selectionClass = css`
   flex-direction: column;
   gap: 16px;
   min-height: 0;
-  margin-left: 10%;
+  width: 500px;
+  margin-left: 20px;
   overflow-y: scroll;
   > h3 {
     margin: 0 0 15px 0;
+  }
+
+  @media(min-width: 2200px) {
+    margin-left: 100px;
+  }
+
+  @media(min-width: 2500px) {
+    margin-left: 10%;
   }
 `
 

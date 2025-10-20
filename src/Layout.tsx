@@ -1,6 +1,5 @@
 import type { FC } from 'react'
 import FallbackScreen from '#assets/activity/no-screen-placeholder.png'
-import { KeyCombo } from './components/KeyCombo'
 import { ActivitySelection } from './features/ActivitySelection'
 import type { Activity } from './features/activity'
 import { ScreenSelection } from './features/ScreenSelection'
@@ -16,15 +15,13 @@ const Screen: FC<{ screen: M8Screen }> = ({ screen }) => {
   )
 }
 
-const ActivityScreen: FC<{ screen: M8Screen; activity: Activity }> = ({ screen, activity }) => {
+const ActivityScreen: FC<{ screen: M8Screen; activity: Activity }> = ({ activity }) => {
   const media = activity.media ?? { img: FallbackScreen }
   return (
     <div className="center">
       {'img' in media && <img className="image" src={media.img} />}
       {'video' in media && <video className="image" src={media.video} autoPlay muted loop />}
-      <div>
-        <KeyCombo id={`${screen.id}-${activity.id}`} keypress={activity.keypress} /> {activity.description}
-      </div>
+      <div>{activity.description}</div>
     </div>
   )
 }

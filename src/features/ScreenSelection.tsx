@@ -114,12 +114,21 @@ const selectionClass = css`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 500px;
   gap: 16px; 
   min-height: 0;
-  margin-right: 10%;
+  margin-right: 20px;
 
   > h3 {
     margin: 0 0 15px 0;
+  }
+
+  @media (min-width: 2200px) {
+    margin-right: 100px;
+  }
+
+  @media(min-width: 2500px) {
+    margin-right: 10%;
   }
 `
 

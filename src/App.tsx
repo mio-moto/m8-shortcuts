@@ -60,19 +60,8 @@ const appClass = css`
       scrollbar-gutter: stable;
 
 
-      > * {
-        flex: 1;
-      }
-
-      > .left {
-        display: flex;
-        flex-direction: column;
-        align-content: flex-end;
-        margin-left: 10%;
-      }
-
       > .center {
-        flex: 0;
+        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -80,10 +69,9 @@ const appClass = css`
         gap: 24px;
 
         > .image {
-          image-rendering: pixelated;
-          width: 960px;
-          height: 640px;
-          border: 16px solid black;
+          min-width: 480px;
+          width: calc(100% - 8px);
+          border: 8px solid black;
           background: black;
         }
 
