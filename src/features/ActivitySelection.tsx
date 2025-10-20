@@ -112,6 +112,7 @@ const selectionClass = css`
   gap: 16px;
   min-height: 0;
   width: 500px;
+  min-width: 450px;
   margin-left: 20px;
   overflow-y: scroll;
   > h3 {

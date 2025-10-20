@@ -115,6 +115,7 @@ const selectionClass = css`
   flex-direction: column;
   justify-content: flex-start;
   width: 500px;
+  min-width: 450px;
   gap: 16px; 
   min-height: 0;
   margin-right: 20px;
