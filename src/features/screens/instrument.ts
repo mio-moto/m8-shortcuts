@@ -1,4 +1,5 @@
 import Screen from '#screens/instrument-sampler.png'
+import { instrumentActivities } from '../activities/instrument/_instrumentActivities'
 import type { M8Screen } from '../screen'
 
 export const instrumentScreen = {
@@ -7,5 +8,5 @@ export const instrumentScreen = {
   img: Screen,
   categories: ['instrument'],
   description: 'Configures an instrument, here: a sampler',
-  activities: [],
+  activities: instrumentActivities,
 } as const satisfies M8Screen

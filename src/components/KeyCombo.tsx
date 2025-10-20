@@ -1,6 +1,7 @@
 import type { FC } from 'react'
 import AddIcon from '#assets/icons/add.svg'
 import ArrowRightIcon from '#assets/icons/arrow-right.svg'
+import TouchIcon from '#assets/icons/pan-tool.svg'
 import type { Activity } from '../features/activity'
 import { Icon } from './Icon'
 import { Keypress } from './Keypress'
@@ -30,6 +31,9 @@ export const KeyCombo: FC<{ keypress: Activity['keypress']; id: string }> = ({ k
         }
         if (key === '3x') {
           return '3x'
+        }
+        if (key === 'touch') {
+          return <Icon key={`${id}-${i}-${key}`} icon={TouchIcon} />
         }
         // biome-ignore lint/suspicious/noArrayIndexKey: static screen anyway
         return <Keypress key={`${id}-${i}`} keys={key} />
