@@ -1,6 +1,5 @@
 import Song from '#screens/song.png'
-import { moveCursorActivity } from '../activities/global/moveCursor'
-import { navigateScreenActivity } from '../activities/global/navigateScreen'
+import { globalActivities } from '../activities/global/_globalActivities'
 import type { M8Screen } from '../screen'
 
 export const globalShortcuts = {
@@ -9,5 +8,5 @@ export const globalShortcuts = {
   img: Song,
   categories: ['misc'],
   description: 'Global Shortcuts are available on most screens.',
-  activities: [moveCursorActivity, navigateScreenActivity],
+  activities: globalActivities,
 } as const satisfies M8Screen

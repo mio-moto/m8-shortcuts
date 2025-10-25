@@ -96,7 +96,7 @@ const categoryClass = css`
 `
 
 const ScreenCategory: FC<{ category: CategoryId; open: boolean; onOpenChange: (open: boolean) => void }> = ({ category, open, onOpenChange }) => {
-  const screens = screensByCategory[category]
+  const screens = screensByCategory[category].filter((x) => x.activities.length > 0)
   return (
     <div className={cx(categoryClass, 'category', open && 'open')} onClick={() => onOpenChange(!open)}>
       <h2>
