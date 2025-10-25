@@ -12,19 +12,17 @@ import { insertNew } from './insertNew'
 import { interpolate } from './interpolate'
 import { muteTrack } from './muteTrack'
 import { navigate } from './navigate'
-import { navigatePhrase } from './navigatePhrase'
-import { navigateTrack } from './navigateTrack'
+import { nextTable } from './nextTable'
 import { paste } from './paste'
 import { play } from './play'
-import { randomizeNotes } from './randomizeNotes'
-import { randomizePattern } from './randomizePattern'
+import { quickNextTable } from './quickNextTable'
 import { shiftSelection } from './shiftSelection'
 import { soloTrack } from './soloTrack'
 
-export const phraseActivities = [
+export const tableActivities = [
   navigate,
-  navigatePhrase,
-  navigateTrack,
+  quickNextTable,
+  nextTable,
 
   play,
   continuePlay,
@@ -45,7 +43,5 @@ export const phraseActivities = [
   paste,
   shiftSelection,
 
-  randomizeNotes,
-  randomizePattern,
   interpolate,
 ]

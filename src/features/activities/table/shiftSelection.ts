@@ -1,4 +1,4 @@
-import Video from '#assets/activity/phrase/shift-selection.webm'
+import Video from '#assets/activity/table/shift-selection.webm'
 import type { Activity } from '../../activity'
 
 export const shiftSelection = {

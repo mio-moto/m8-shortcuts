@@ -1,4 +1,4 @@
-import Video from '#assets/activity/phrase/interpolate.webm'
+import Video from '#assets/activity/table/interpolate.webm'
 import type { Activity } from '../../activity'
 
 export const interpolate = {
