@@ -30,10 +30,11 @@ const keypressClass = css`
     color: ${style.themeColors.text.default};
 
     &.press {
-      animation: 2.0s linear infinite both rotate-opacity;
+      animation: 1.0s linear infinite both rotate-opacity;
       @keyframes rotate-opacity {
-        25% { opacity: 1.0; }
+        49.999% { opacity: 1.0; }
         50% { opacity: 0.65; }
+        74.999% { opacity: 0.65; }
         75% { opacity: 1.0; }
       }
     }
