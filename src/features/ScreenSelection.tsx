@@ -1,10 +1,8 @@
 import { css, cx } from '@linaria/core'
-import { type FC, useState } from 'react'
+import type { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ChevronRightIcon from '#assets/icons/chevron-right.svg'
 import { fragments } from '../app/style/fragments'
 import { style } from '../app/style/style'
-import { Icon } from '../components/Icon'
 import { type CategoryId, categoryNameById, type M8Screen, screensByCategory } from './screen'
 import { useAppParams } from './useAppParams'
 
@@ -53,20 +51,14 @@ const ScreenEntry: FC<{ screen: M8Screen }> = ({ screen }) => {
         navigate(`/${screen.id}`)
       }}
     >
-      <h3>
-        {screen.name} - {screen.activities.length} activities
-      </h3>
+      <h3>{screen.name}</h3>
       <img src={screen.img} />
     </div>
   )
 }
 
 const categoryClass = css`  
-  interpolate-size: allow-keywords;
-  height: 52px;
-  min-height: 52px;
   transition: ${fragments.transition.regular('height')};
-  overflow-y: hidden;
   scrollbar-gutter: stable;
   isolation: isolate;
   > h2 {
@@ -79,30 +71,14 @@ const categoryClass = css`
     padding: 4px;
     margin: 0;
     border-bottom: 2px solid ${style.themeColors.line.default};
-    > .icon {
-      transition: ${fragments.transition.regular('transform')};
-    }
   }
-
-  &.open { 
-    height: auto;
-    overflow-y: scroll;
-
-    > h2 > .icon {
-      transform: rotate(90deg);
-    }
-  }
-
 `
 
-const ScreenCategory: FC<{ category: CategoryId; open: boolean; onOpenChange: (open: boolean) => void }> = ({ category, open, onOpenChange }) => {
+const ScreenCategory: FC<{ category: CategoryId }> = ({ category }) => {
   const screens = screensByCategory[category].filter((x) => x.activities.length > 0)
   return (
-    <div className={cx(categoryClass, 'category', open && 'open')} onClick={() => onOpenChange(!open)}>
-      <h2>
-        <Icon icon={ChevronRightIcon} size="l" />
-        {categoryNameById[category]}
-      </h2>
+    <div className={cx(categoryClass, 'category', 'open')}>
+      <h2>{categoryNameById[category]}</h2>
       {screens.map((x, _i) => (
         <ScreenEntry key={`${category}-${x.id}`} screen={x} />
       ))}
@@ -119,6 +95,8 @@ const selectionClass = css`
   gap: 16px; 
   min-height: 0;
   margin-right: 20px;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 
   > h3 {
     margin: 0 0 15px 0;
@@ -134,65 +112,13 @@ const selectionClass = css`
 `
 
 export const ScreenSelection: FC = () => {
-  const [open, setOpen] = useState<CategoryId>()
-
   return (
     <div className={cx('right', selectionClass)}>
-      <ScreenCategory
-        category="misc"
-        open={open === 'misc'}
-        onOpenChange={(value) => {
-          if (value) {
-            setOpen('misc')
-          } else if (open === 'misc') {
-            setOpen(undefined)
-          }
-        }}
-      />
-      <ScreenCategory
-        category="system"
-        open={open === 'system'}
-        onOpenChange={(value) => {
-          if (value) {
-            setOpen('system')
-          } else if (open === 'system') {
-            setOpen(undefined)
-          }
-        }}
-      />
-      <ScreenCategory
-        category="sequencer"
-        open={open === 'sequencer'}
-        onOpenChange={(value) => {
-          if (value) {
-            setOpen('sequencer')
-          } else if (open === 'sequencer') {
-            setOpen(undefined)
-          }
-        }}
-      />
-      <ScreenCategory
-        category="instrument"
-        open={open === 'instrument'}
-        onOpenChange={(value) => {
-          if (value) {
-            setOpen('instrument')
-          } else if (open === 'instrument') {
-            setOpen(undefined)
-          }
-        }}
-      />
-      <ScreenCategory
-        category="mixer"
-        open={open === 'mixer'}
-        onOpenChange={(value) => {
-          if (value) {
-            setOpen('mixer')
-          } else if (open === 'mixer') {
-            setOpen(undefined)
-          }
-        }}
-      />
+      <ScreenCategory category="misc" />
+      <ScreenCategory category="system" />
+      <ScreenCategory category="sequencer" />
+      <ScreenCategory category="instrument" />
+      <ScreenCategory category="mixer" />
     </div>
   )
 }

@@ -78,6 +78,8 @@ const categoryClass = css`
     background-color: ${style.themeColors.background.default};
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
     padding: 4px;
     margin: 0;
     border-bottom: 2px solid ${style.themeColors.line.default};

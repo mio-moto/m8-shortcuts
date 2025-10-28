@@ -6,7 +6,6 @@ import { globalShortcuts } from './screens/global'
 import { grooveScreen } from './screens/groove'
 import { instrumentScreen } from './screens/instrument'
 import { instrumentModsScreen } from './screens/instrument-mods'
-import { limiterScreen } from './screens/limiter'
 import { loadProjectScreen } from './screens/load-project'
 import { midiMappingsScreen } from './screens/midi-mappings'
 import { midiSettingsScreen } from './screens/midi-settings'
@@ -15,6 +14,7 @@ import { phraseScreen } from './screens/phrase'
 import { projectScreen } from './screens/project'
 import { renderAudioScreen } from './screens/render-audio'
 import { scaleScreen } from './screens/scale'
+import { limiterScreen } from './screens/scope'
 import { songScreen } from './screens/song'
 import { systemSettingsScreen } from './screens/system-settings'
 import { tableScreen } from './screens/table'
@@ -57,24 +57,29 @@ export const categories = [
 
 export const screens = [
   globalShortcuts,
-  chainScreen,
-  equalizerBankScreen,
-  fxSettingsScreen,
-  grooveScreen,
-  instrumentModsScreen,
-  instrumentScreen,
-  limiterScreen,
+
+  projectScreen,
   midiMappingsScreen,
   midiSettingsScreen,
-  mixerScreen,
-  phraseScreen,
-  projectScreen,
   loadProjectScreen,
   renderAudioScreen,
-  scaleScreen,
+
   songScreen,
-  systemSettingsScreen,
+  chainScreen,
+  phraseScreen,
   tableScreen,
+  grooveScreen,
+  scaleScreen,
+
+  instrumentScreen,
+  instrumentModsScreen,
+
+  fxSettingsScreen,
+  mixerScreen,
+  limiterScreen,
+  equalizerBankScreen,
+
+  systemSettingsScreen,
   themeScreen,
   timeStatsScreen,
 ] as const satisfies M8Screen[]
