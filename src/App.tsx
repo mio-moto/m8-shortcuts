@@ -69,10 +69,14 @@ const appClass = css`
         gap: 24px;
 
         > .image {
+          display: block;
+          align-self: stretch;
           min-width: 480px;
-          width: calc(100% - 8px);
           border: 8px solid black;
           background: black;
+          max-height: 70vh;
+          aspect-ratio: 1.5;
+
         }
 
 

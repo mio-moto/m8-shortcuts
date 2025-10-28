@@ -35,6 +35,9 @@ export const KeyCombo: FC<{ keypress: Activity['keypress']; id: string }> = ({ k
         if (key === 'touch') {
           return <Icon key={`${id}-${i}-${key}`} icon={TouchIcon} />
         }
+        if (key === 'midi') {
+          return 'MIDI'
+        }
         // biome-ignore lint/suspicious/noArrayIndexKey: static screen anyway
         return <Keypress key={`${id}-${i}`} keys={key} />
       })}

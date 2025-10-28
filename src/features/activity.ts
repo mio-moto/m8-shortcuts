@@ -6,7 +6,7 @@ export interface Activity {
   title: string
   media?: { img: string } | { video: string }
   categories: ActivityCategoryId[]
-  keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '2x' | '3x' | 'touch')[]
+  keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '2x' | '3x' | 'touch' | 'midi')[]
   description: ReactNode
 }
 
