@@ -10,6 +10,8 @@ import { editSmall } from './editSmall'
 import { enterSelection } from './enterSelection'
 import { insertNew } from './insertNew'
 import { interpolate } from './interpolate'
+import { loopSelection } from './loopSelection'
+import { loopSelectionTracks } from './loopSelectionTracks'
 import { muteTrack } from './muteTrack'
 import { navigate } from './navigate'
 import { navigatePhrase } from './navigatePhrase'
@@ -28,6 +30,8 @@ export const phraseActivities = [
 
   play,
   continuePlay,
+  loopSelection,
+  loopSelectionTracks,
   muteTrack,
   soloTrack,
   clearAllMuteSolo,

@@ -8,6 +8,8 @@ import { editSmall } from './editSmall'
 import { enterSelection } from './enterSelection'
 import { insertNew } from './insertNew'
 import { insertUnused } from './insertUnused'
+import { loopSelection } from './loopSelection'
+import { loopSelectionTracks } from './loopSelectionTracks'
 import { muteTrack } from './muteTrack'
 import { navigate } from './navigate'
 import { navigateChain } from './navigateChain'
@@ -20,11 +22,15 @@ export const chainActivities = [
   navigate,
   navigateChain,
   navigateTrack,
+
   play,
   continuePlay,
+  loopSelection,
+  loopSelectionTracks,
   muteTrack,
   soloTrack,
   clearAllMuteSolo,
+
   insertNew,
   editSmall,
   editLarge,

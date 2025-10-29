@@ -11,6 +11,7 @@ import { editSmall } from './editSmall'
 import { enterSelection } from './enterSelection'
 import { insertNew } from './insertNew'
 import { liveMode } from './liveMode'
+import { loopSelectionTracks } from './loopSelectionTracks'
 import { moveFast } from './moveFast'
 import { moveSelection } from './moveSelection'
 import { moveSlow } from './moveSlow'
@@ -39,6 +40,7 @@ export const songActivities = [
   deepClone,
   moveTrack,
   play,
+  loopSelectionTracks,
   cueRow,
   soloTracks,
   muteTrack,
