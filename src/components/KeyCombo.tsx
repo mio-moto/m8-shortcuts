@@ -21,7 +21,7 @@ export const KeyCombo: FC<{ keypress: Activity['keypress']; id: string }> = ({ k
           return <Icon key={`${id}-${i}-${key}`} icon={AddIcon} />
         }
         if (key === 'or') {
-          return ','
+          return ' | '
         }
         if (key === 'hold') {
           return 'HOLD'

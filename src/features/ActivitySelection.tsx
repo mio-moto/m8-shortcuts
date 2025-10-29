@@ -31,6 +31,12 @@ const entryClass = css`
     > .title {
       flex: 1;
     }
+
+    > .combo {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
   }
 
   > img {
