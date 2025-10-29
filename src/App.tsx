@@ -1,6 +1,6 @@
 import { css } from '@linaria/core'
 import type { FC } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { fragments } from './app/style/fragments'
 import { style } from './app/style/style'
 import { Layout } from './Layout'
@@ -119,6 +119,7 @@ export const App: FC = () => {
         </div>
         <div className="panels">
           <Routes>
+            <Route index={true} element={<Navigate to="song" />} />
             <Route path=":screen?/:activity?" element={<Layout />} />
           </Routes>
         </div>
