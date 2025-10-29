@@ -68,7 +68,7 @@ const categoryClass = css`
     top: 0;
     display: flex;
     align-items: center;
-    padding: 4px;
+    padding: 4px 16px 4px 4px;
     margin: 0;
     border-bottom: 2px solid ${style.themeColors.line.default};
   }
@@ -91,6 +91,7 @@ const selectionClass = css`
   flex-direction: column;
   justify-content: flex-start;
   width: fit-content;
+  min-width: fit-content;
   gap: 16px; 
   min-height: 0;
   margin-right: 20px;
