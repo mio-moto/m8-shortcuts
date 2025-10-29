@@ -42,6 +42,14 @@ export const activityCategories = [
     id: 'global',
     title: 'Global Shortcuts',
   },
+  {
+    id: 'hyper',
+    title: 'Hypersynth',
+  },
+  {
+    id: 'fm',
+    title: 'FM Synth',
+  },
 ] as const
 
 export const activityCategoryId = activityCategories.map((x) => x.id)

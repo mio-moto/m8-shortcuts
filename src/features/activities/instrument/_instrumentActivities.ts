@@ -8,6 +8,13 @@ import { copy } from './copy'
 import { editLarge } from './editLarge'
 import { editSmall } from './editSmall'
 import { editTouch } from './editTouch'
+import { fmChangeAlgo } from './fmChangeAlgo'
+import { fmChangeOperator } from './fmChangeOperator'
+import { fmCopyOperator } from './fmCopyOperator'
+import { fmPasteOperator } from './fmPasteOperator'
+import { hyperAddNote } from './hyperAddNote'
+import { hyperChangeChord } from './hyperChangeChord'
+import { hyperRemoveNote } from './hyperRemoveNote'
 import { nameInstrument } from './nameInstrument'
 import { navigate } from './navigate'
 import { nextInstrument } from './nextInstrument'
@@ -37,6 +44,15 @@ export const instrumentActivities = [
   paste,
   undoPaste,
   editTouch,
+
+  fmChangeAlgo,
+  fmChangeOperator,
+  fmCopyOperator,
+  fmPasteOperator,
+
+  hyperAddNote,
+  hyperChangeChord,
+  hyperRemoveNote,
 
   assignMidi,
   nameInstrument,
