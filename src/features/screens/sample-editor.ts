@@ -2,7 +2,7 @@ import Screen from '#screens/sample-editor.png'
 import { sampleEditorActivities } from '../activities/sample-editor/_sampleEditorActivities'
 import type { M8Screen } from '../screen'
 
-export const instrumentScreen = {
+export const sampleEditorScreen = {
   id: 'sample-editor',
   name: 'Sample Editor',
   img: Screen,

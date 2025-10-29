@@ -13,6 +13,7 @@ import { mixerScreen } from './screens/mixer'
 import { phraseScreen } from './screens/phrase'
 import { projectScreen } from './screens/project'
 import { renderAudioScreen } from './screens/render-audio'
+import { sampleEditorScreen } from './screens/sample-editor'
 import { scaleScreen } from './screens/scale'
 import { limiterScreen } from './screens/scope'
 import { songScreen } from './screens/song'
@@ -73,6 +74,7 @@ export const screens = [
 
   instrumentScreen,
   instrumentModsScreen,
+  sampleEditorScreen,
 
   fxSettingsScreen,
   mixerScreen,
