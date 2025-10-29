@@ -52,7 +52,7 @@ const ScreenEntry: FC<{ screen: M8Screen }> = ({ screen }) => {
       }}
     >
       <h3>{screen.name}</h3>
-      <img src={screen.img} />
+      {/* <img src={screen.img} /> */}
     </div>
   )
 }
@@ -90,8 +90,7 @@ const selectionClass = css`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 500px;
-  min-width: 450px;
+  width: fit-content;
   gap: 16px; 
   min-height: 0;
   margin-right: 20px;
