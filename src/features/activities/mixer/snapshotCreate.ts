@@ -1,4 +1,4 @@
-import Video from '#assets/activity/mixer/solo-track.webm'
+import Video from '#assets/activity/mixer/snapshot-create.webm'
 import type { Activity } from '../../activity'
 
 export const snapshotCreate = {

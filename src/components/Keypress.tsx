@@ -5,7 +5,12 @@ import PressSprite from '#assets/sprites/button-press.svg'
 import { style } from '../app/style/style'
 import { Icon } from './Icon'
 
-export type Key = 'up' | 'down' | 'left' | 'right' | 'edit' | 'opt' | 'shift' | 'play'
+
+type KeyDown = 'up' | 'down' | 'left' | 'right' | 'edit' | 'opt' | 'shift' | 'play'
+
+export type Key = KeyDown | `${KeyDown}-hold`
+
+
 
 const keypressClass = css`
   display: inline-flex;
@@ -43,13 +48,13 @@ const keypressClass = css`
   > .opt {
     left: 16px;
     top: 0;
-    &.press { color: ${style.colors.teal.primary}; }
+    &.action { color: ${style.colors.teal.primary}; }
   }
 
   > .edit {
     left: 22px;
     top: 0;
-    &.press { color: ${style.colors.ochre.primary}; }
+    &.action { color: ${style.colors.ochre.primary}; }
   }
 
   > .up {
@@ -75,18 +80,35 @@ const keypressClass = css`
   > .shift {
     left: 6px;
     top: 18px;
-    &.press { color: ${style.colors.raspberry[500]}; }
+    &.action { color: ${style.colors.raspberry[500]}; }
   }
 
   > .play {
     left: 12px;
     top: 18px;
-    &.press { color: ${style.colors.lime.primary}; }
+    &.action { color: ${style.colors.lime.primary}; }
   }
 `
 
-const has = (which: Key, keys: Key[] | Key) => keys === which || keys.includes(which)
+const has = (which: Key, keys: Key[] | Key) => {
+ if(keys === which) {
+  return true;
+ } 
 
+  if(Array.isArray(keys)) {
+    return keys.some(x => x.startsWith(which))
+  } 
+  return keys.startsWith(which)
+}
+
+const isHold = (which: Key, keys: Key[] | Key) => {
+  if(Array.isArray(keys)) {
+    const element = keys.find(x => x.startsWith(which));
+    return element?.endsWith('hold')
+  }
+  return which.endsWith('hold')
+}
+ 
 export const Keypress: FC<{
   keys: Key[] | Key
 }> = ({ keys }) => {
@@ -101,14 +123,14 @@ export const Keypress: FC<{
       <Icon icon={ButtonSprite} className="shift" />
       <Icon icon={ButtonSprite} className="play" />
 
-      {has('left', keys) && <Icon icon={PressSprite} className="left press" />}
-      {has('right', keys) && <Icon icon={PressSprite} className="right press" />}
-      {has('up', keys) && <Icon icon={PressSprite} className="up press" />}
-      {has('down', keys) && <Icon icon={PressSprite} className="down press" />}
-      {has('edit', keys) && <Icon icon={PressSprite} className="edit press" />}
-      {has('opt', keys) && <Icon icon={PressSprite} className="opt press" />}
-      {has('shift', keys) && <Icon icon={PressSprite} className="shift press" />}
-      {has('play', keys) && <Icon icon={PressSprite} className="play press" />}
+      {has('left', keys) && <Icon icon={PressSprite} className={cx("left", "action", isHold('left', keys) ? "hold" : "press")} />}
+      {has('right', keys) && <Icon icon={PressSprite} className={cx("right", "action", isHold('right', keys) ? "hold" : "press")} />}
+      {has('up', keys) && <Icon icon={PressSprite} className={cx("up", "action", isHold('up', keys) ? "hold" : "press")} />}
+      {has('down', keys) && <Icon icon={PressSprite} className={cx("down", "action", isHold('down', keys) ? "hold" : "press")} />}
+      {has('edit', keys) && <Icon icon={PressSprite} className={cx("edit", "action", isHold('edit', keys) ? "hold" : "press")} />}
+      {has('opt', keys) && <Icon icon={PressSprite} className={cx("opt", "action", isHold('opt', keys) ? "hold" : "press")} />}
+      {has('shift', keys) && <Icon icon={PressSprite} className={cx("shift", "action", isHold('shift', keys) ? "hold" : "press")} />}
+      {has('play', keys) && <Icon icon={PressSprite} className={cx("play", "action", isHold('play', keys) ? "hold" : "press")} />}
     </div>
   )
 }

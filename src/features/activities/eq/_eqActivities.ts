@@ -28,6 +28,7 @@ export const eqActivities = [
   setDefault,
   copy,
   paste,
+  
   assignTouch,
   assignMidi,
 ]

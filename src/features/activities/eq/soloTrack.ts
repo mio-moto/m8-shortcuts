@@ -6,6 +6,6 @@ export const soloTrack = {
   title: 'Solo Track',
   description: 'Solo current track, release option first to hold the solo.',
   media: { img: Image },
-  keypress: [['opt', 'play']],
+  keypress: [['opt-hold', 'play']],
   categories: ['play'],
 } as const satisfies Activity

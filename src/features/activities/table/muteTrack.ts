@@ -6,6 +6,6 @@ export const muteTrack = {
   title: 'Mute Track',
   description: 'Mute current track - if you release option first, holds the mute',
   media: { video: Video },
-  keypress: [['opt', 'shift']],
+  keypress: [['opt-hold', 'shift']],
   categories: ['play'],
 } as const satisfies Activity

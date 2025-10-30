@@ -6,6 +6,6 @@ export const cueRow = {
   title: 'Cue Row',
   description: 'Cue the selected song row for playback, regardless of Live Mode.',
   media: { video: Video },
-  keypress: [['play']],
+  keypress: [['play', 'left']],
   categories: ['play'],
 } as const satisfies Activity

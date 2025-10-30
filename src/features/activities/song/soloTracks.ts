@@ -6,6 +6,6 @@ export const soloTracks = {
   title: 'Solo tracks to the left / right',
   description: "Solo all tracks to the left or right side of the cursor's position.",
   media: { video: Video },
-  keypress: [['opt', 'left'], 'or', ['opt', 'right']],
+  keypress: [['opt-hold', 'left'], 'or', ['opt', 'right']],
   categories: ['play'],
 } as const satisfies Activity

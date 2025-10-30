@@ -1,3 +1,5 @@
+import { assignMidi } from '../eq/assignMidi'
+import { assignTouch } from './assignMidi'
 import { clearAllMuteSolo } from './clearAllMuteSolo'
 import { continuePlay } from './continuePlay'
 import { editLarge } from './editLarge'
@@ -18,4 +20,7 @@ export const fxActivities = [
   editSmall,
   editLarge,
   setDefault,
+
+  assignMidi,
+  assignTouch,
 ]
