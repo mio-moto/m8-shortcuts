@@ -4,7 +4,7 @@ import type { M8Screen } from '../screen'
 
 export const grooveScreen = {
   id: 'groove',
-  name: 'groove',
+  name: 'Groove',
   img: Screen,
   categories: ['sequencer'],
   description: 'Sets the tick count per step of a phrase',

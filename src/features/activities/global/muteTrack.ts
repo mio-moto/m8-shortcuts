@@ -1,4 +1,4 @@
-import Video from '#assets/activity/instrument/mute-track.webm'
+import Video from '#assets/activity/instrument/mute-track.mp4'
 import type { Activity } from '../../activity'
 
 export const muteTrack = {

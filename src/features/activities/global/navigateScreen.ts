@@ -1,4 +1,4 @@
-import Video from '#assets/activity/global/navigate-screens.webm'
+import Video from '#assets/activity/song/move-slow.webm'
 import type { Activity } from '../../activity'
 
 export const navigateScreenActivity = {

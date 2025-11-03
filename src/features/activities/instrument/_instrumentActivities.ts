@@ -14,6 +14,8 @@ import { fmCopyOperator } from './fmCopyOperator'
 import { fmPasteOperator } from './fmPasteOperator'
 import { hyperAddNote } from './hyperAddNote'
 import { hyperChangeChord } from './hyperChangeChord'
+import { hyperCopyChord } from './hyperCopyChord'
+import { hyperPasteChord } from './hyperPasteChord'
 import { hyperRemoveNote } from './hyperRemoveNote'
 import { nameInstrument } from './nameInstrument'
 import { navigate } from './navigate'
@@ -31,19 +33,19 @@ export const instrumentActivities = [
   nextInstrumentQuick,
 
   play,
-  preview,
   continuePlay,
   muteTrack,
   soloTrack,
   clearAllMuteSolo,
+  preview,
 
   editLarge,
   editSmall,
+  editTouch,
   setDefault,
   copy,
   paste,
   undoPaste,
-  editTouch,
 
   fmChangeAlgo,
   fmChangeOperator,
@@ -52,6 +54,8 @@ export const instrumentActivities = [
 
   hyperAddNote,
   hyperChangeChord,
+  hyperCopyChord,
+  hyperPasteChord,
   hyperRemoveNote,
 
   assignMidi,

@@ -1,4 +1,4 @@
-import Video from '#assets/activity/instrument/clear-mutes.webm'
+import Video from '#assets/activity/instrument/clear-mutes.mp4'
 import type { Activity } from '../../activity'
 
 export const clearAllMuteSolo = {

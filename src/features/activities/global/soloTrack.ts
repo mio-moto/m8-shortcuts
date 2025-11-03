@@ -1,4 +1,4 @@
-import Video from '#assets/activity/instrument/solo-track.webm'
+import Video from '#assets/activity/instrument/solo-track.mp4'
 import type { Activity } from '../../activity'
 
 export const soloTrack = {
