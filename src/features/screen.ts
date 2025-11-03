@@ -6,7 +6,7 @@ import { globalShortcuts } from './screens/global'
 import { grooveScreen } from './screens/groove'
 import { instrumentScreen } from './screens/instrument'
 import { instrumentModsScreen } from './screens/instrument-mods'
-import { loadProjectScreen } from './screens/load-project'
+import { fileBrowser } from './screens/load-project'
 import { midiMappingsScreen } from './screens/midi-mappings'
 import { midiSettingsScreen } from './screens/midi-settings'
 import { mixerScreen } from './screens/mixer'
@@ -62,7 +62,7 @@ export const screens = [
   projectScreen,
   midiMappingsScreen,
   midiSettingsScreen,
-  loadProjectScreen,
+  fileBrowser,
   renderAudioScreen,
 
   songScreen,
