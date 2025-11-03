@@ -80,9 +80,6 @@ const categoryClass = css`
   scrollbar-gutter: stable;
   isolation: isolate;
 
-  > :first-child {
-    padding-top: 49px;
-  }
 
   > h2 {
     background-color: ${style.themeColors.background.default};
@@ -123,6 +120,7 @@ const selectionClass = css`
   flex: 1;
   flex-direction: column;
   gap: 16px;
+  padding-top: 45px;
   min-height: 0;
   width: fit-content;
   max-width: 550px;
