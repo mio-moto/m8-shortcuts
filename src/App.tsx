@@ -114,9 +114,6 @@ export const App: FC = () => {
   return (
     <div className={appClass}>
       <main className="main">
-        <div className="heading">
-          <h1 className="title">M8 Shortcuts</h1>
-        </div>
         <div className="panels">
           <Routes>
             <Route index={true} element={<Navigate to="song" />} />

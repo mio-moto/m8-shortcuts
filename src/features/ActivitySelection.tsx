@@ -116,13 +116,15 @@ export const ActivityCategory: FC<{ screen?: M8Screen; category: M8ActivityCateg
 
 const selectionClass = css`
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 16px;
   min-height: 0;
   width: fit-content;
-  min-width: 300px;
+  max-width: 550px;
   margin-left: 20px;
   overflow-y: scroll;
+  padding-top: 45px;
   > h3 {
     margin: 0 0 15px 0;
   }

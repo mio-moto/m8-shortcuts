@@ -1,11 +1,13 @@
-import Video from '#assets/activity/project/mute-track.webm'
+import Data from '#assets/activity/project/mute-track.json'
+import Video from '#assets/activity/project/mute-track.mp4'
+
 import type { Activity } from '../../activity'
 
 export const muteTrack = {
   id: 'mute-track',
   title: 'Mute Track',
   description: 'Mute current track - if you release option first, holds the mute',
-  media: { video: Video },
-  keypress: [['opt-hold', 'shift']],
+  media: { video: Video, events: Data as [number, number][] },
+  keypress: [['opt', 'shift']],
   categories: ['play'],
 } as const satisfies Activity

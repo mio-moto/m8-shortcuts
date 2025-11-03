@@ -4,7 +4,7 @@ import type { Key } from '../components/Keypress'
 export interface Activity {
   id: string
   title: string
-  media?: { img: string } | { video: string }
+  media?: { img: string } | { video: string; events?: [number, number][] }
   categories: ActivityCategoryId[]
   keypress: (Key | Key[] | 'and' | 'after' | 'or' | 'hold' | '2x' | '3x' | 'touch' | 'midi')[]
   description: ReactNode

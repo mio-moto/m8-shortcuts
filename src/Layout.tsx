@@ -2,28 +2,21 @@ import type { FC } from 'react'
 import FallbackScreen from '#assets/activity/no-screen-placeholder.png'
 import { ActivitySelection } from './features/ActivitySelection'
 import type { Activity } from './features/activity'
+import { M8Player } from './features/M8Player'
 import { ScreenSelection } from './features/ScreenSelection'
 import { type M8Screen, screens } from './features/screen'
 import { useAppParams } from './features/useAppParams'
 
 const Screen: FC<{ screen: M8Screen }> = ({ screen }) => {
-  return (
-    <div className="center">
-      <img className="image" src={screen.img} />
-      <div>{screen.description}</div>
-    </div>
-  )
+  return <M8Player title={screen.name} media={{ type: 'image', img: screen.img }} description={screen.description} />
 }
 
 const ActivityScreen: FC<{ screen: M8Screen; activity: Activity }> = ({ activity }) => {
   const media = activity.media ?? { img: FallbackScreen }
-  return (
-    <div className="center">
-      {'img' in media && <img className="image" src={media.img} />}
-      {'video' in media && <video className="image" src={media.video} autoPlay muted loop />}
-      <div>{activity.description}</div>
-    </div>
-  )
+
+  const mediaData = 'img' in media ? { type: 'image' as const, img: media.img } : { type: 'video' as const, video: media.video, events: media.events }
+
+  return <M8Player title={activity.title} media={mediaData} description={activity.description} />
 }
 
 export const Layout: FC = () => {
@@ -35,7 +28,7 @@ export const Layout: FC = () => {
   return (
     <>
       <ActivitySelection />
-      {activity ? <ActivityScreen activity={activity} screen={screen} /> : <Screen screen={screen} />}
+      {activity ? <ActivityScreen screen={screen} activity={activity} /> : <Screen screen={screen} />}
       <ScreenSelection />
     </>
   )

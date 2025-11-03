@@ -88,6 +88,8 @@ const ScreenCategory: FC<{ category: CategoryId }> = ({ category }) => {
 
 const selectionClass = css`
   display: flex;
+  flex: 1;
+  max-width: 550px;
   flex-direction: column;
   justify-content: flex-start;
   width: fit-content;
@@ -97,6 +99,7 @@ const selectionClass = css`
   margin-right: 20px;
   overflow-y: scroll;
   scrollbar-gutter: stable;
+  padding-top: 45px;
 
   > h3 {
     margin: 0 0 15px 0;
