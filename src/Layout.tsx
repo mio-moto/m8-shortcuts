@@ -1,15 +1,11 @@
 import type { FC } from 'react'
 import FallbackScreen from '#assets/activity/no-screen-placeholder.png'
 import { ActivitySelection } from './features/ActivitySelection'
-import { type Activity } from './features/activity'
+import type { Activity } from './features/activity'
 import { M8Player } from './features/M8Player'
 import { ScreenSelection } from './features/ScreenSelection'
 import { type M8Screen, screens } from './features/screen'
 import { useAppParams } from './features/useAppParams'
-
-const _Screen: FC<{ screen: M8Screen }> = ({ screen }) => {
-  return <M8Player title={screen.name} media={{ type: 'image', img: screen.img }} description={screen.description} />
-}
 
 const ActivityScreen: FC<{ screen: M8Screen; activity?: Activity }> = ({ screen, activity }) => {
   const usedActivity = activity ?? screen.activities[0]
