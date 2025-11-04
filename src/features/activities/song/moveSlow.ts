@@ -4,7 +4,7 @@ import type { Activity } from '../../activity'
 
 export const moveSlow = {
   id: 'move-slow',
-  title: 'Move Cursor',
+  title: 'Navigate',
   description: 'Moves the cursor on the screen',
   media: { video: Video, events: Data as [number, number][] },
   keypress: ['up', 'or', 'down', 'or', 'left', 'or', 'right'],
