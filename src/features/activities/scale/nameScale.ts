@@ -1,5 +1,5 @@
-import Data from '#assets/activity/scale/name-instrument.json'
-import Video from '#assets/activity/scale/name-instrument.mp4'
+import Data from '#assets/activity/scale/name-scale.json'
+import Video from '#assets/activity/scale/name-scale.mp4'
 import type { Activity } from '../../activity'
 
 export const nameScale = {
