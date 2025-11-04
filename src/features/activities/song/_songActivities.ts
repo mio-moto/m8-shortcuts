@@ -27,18 +27,21 @@ import { trackTime } from './trackTime'
 export const songActivities = [
   moveSlow,
   moveFast,
+
   insertNew,
   editLarge,
   editSmall,
   editMultiple,
   enterSelection,
   moveSelection,
+
   copy,
-  paste,
   cut,
+  paste,
   clone,
   deepClone,
   moveTrack,
+
   play,
   loopSelectionTracks,
   cueRow,
@@ -47,6 +50,7 @@ export const songActivities = [
   soloTrack,
   clearAllMuteSolo,
   liveMode,
+
   bookmark,
   renderSelection,
   trackTime,

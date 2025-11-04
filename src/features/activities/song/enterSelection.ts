@@ -1,11 +1,12 @@
-import Video from '#assets/activity/song/enter-selection.webm'
+import Data from '#assets/activity/song/enter-selection.json'
+import Video from '#assets/activity/song/enter-selection.mp4'
 import type { Activity } from '../../activity'
 
 export const enterSelection = {
   id: 'enter-selection',
   title: 'Enter Selection Mode',
   description: 'Enters Selection mode, which then can be expanded by using the directional keys',
-  media: { video: Video },
+  media: { video: Video, events: Data as [number, number][] },
   keypress: [['shift', 'opt']],
   categories: ['selection'],
 } as const satisfies Activity
