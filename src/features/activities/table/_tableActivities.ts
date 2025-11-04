@@ -1,4 +1,5 @@
 import { clearAllMuteSolo } from './clearAllMuteSolo'
+import { clone } from './clone'
 import { continuePlay } from './continuePlay'
 import { copy } from './copy'
 import { createNewInstrument } from './createNewInstrument'
@@ -17,6 +18,7 @@ import { paste } from './paste'
 import { play } from './play'
 import { quickNextTable } from './quickNextTable'
 import { shiftSelection } from './shiftSelection'
+import { showFxHelp } from './showFxHelp'
 import { soloTrack } from './soloTrack'
 
 export const tableActivities = [
@@ -36,6 +38,7 @@ export const tableActivities = [
   editSmall,
   createNewInstrument,
   createNewTable,
+  clone,
 
   enterSelection,
   copy,
@@ -43,5 +46,6 @@ export const tableActivities = [
   paste,
   shiftSelection,
 
+  showFxHelp,
   interpolate,
 ]
