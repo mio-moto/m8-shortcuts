@@ -1,4 +1,5 @@
-import type { FC } from 'react'
+import { type FC, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import FallbackScreen from '#assets/activity/no-screen-placeholder.png'
 import { ActivitySelection } from './features/ActivitySelection'
 import type { Activity } from './features/activity'
@@ -17,10 +18,17 @@ const ActivityScreen: FC<{ screen: M8Screen; activity?: Activity }> = ({ screen,
 }
 
 export const Layout: FC = () => {
+  const navigate = useNavigate()
   const parameters = useAppParams()
 
   const screen = screens.find((x) => x.id === parameters.screen) ?? screens[0]
   const activity = parameters.activity ? screen?.activities.find((x) => parameters.activity === x.id) : undefined
+
+  useEffect(() => {
+    if (!activity) {
+      navigate(`/${screen.id}/${screen.activities[0].id}`, { replace: true })
+    }
+  }, [activity, screen, navigate])
 
   return (
     <>

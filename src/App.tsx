@@ -116,7 +116,7 @@ export const App: FC = () => {
       <main className="main">
         <div className="panels">
           <Routes>
-            <Route index={true} element={<Navigate to="song" />} />
+            <Route index={true} element={<Navigate to="song" replace />} />
             <Route path=":screen?/:activity?" element={<Layout />} />
           </Routes>
         </div>
