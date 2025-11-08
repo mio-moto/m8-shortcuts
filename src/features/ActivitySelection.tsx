@@ -1,11 +1,11 @@
 import { css, cx } from '@linaria/core'
-import { type FC, useCallback, useMemo, useState } from 'react'
+import { type FC, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import FallbackImage from '#assets/activity/no-screen-placeholder.png'
 import { fragments } from '../app/style/fragments'
 import { style } from '../app/style/style'
 import { KeyCombo } from '../components/KeyCombo'
-import { type Activity, type ActivityCategoryId, activityCategories, type ActivityCategory as M8ActivityCategory } from './activity'
+import { type Activity, activityCategories, type ActivityCategory as M8ActivityCategory } from './activity'
 import { type M8Screen, screens } from './screen'
 import { useAppParams } from './useAppParams'
 
@@ -24,10 +24,21 @@ const entryClass = css`
     background-color: ${style.themeColors.background.defaultHover};
   }
 
+  @media (max-width: 1600px) {
+    border-bottom: 1px solid ${style.themeColors.line.default};
+  }
+
   > h3 {
     margin: 0;
     display: flex;
     align-items: center;
+
+    @media (max-width: 1600px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
     > .title {
       flex: 1;
     }
@@ -86,19 +97,14 @@ const categoryClass = css`
     display: flex;
     align-items: center;
     position: sticky;
-    top: 0;
-    padding: 4px;
+    top: 25px;
+    padding: 24px 4px 4px 4px;
     margin: 0;
     border-bottom: 2px solid ${style.themeColors.line.default};
   }
 `
 
-export const ActivityCategory: FC<{ screen?: M8Screen; category: M8ActivityCategory; open: boolean; onOpenChange: (open: boolean) => void }> = ({
-  screen,
-  category,
-  open,
-  onOpenChange,
-}) => {
+export const ActivityCategory: FC<{ screen?: M8Screen; category: M8ActivityCategory }> = ({ screen, category }) => {
   if (!screen) {
     return undefined
   }
@@ -106,7 +112,7 @@ export const ActivityCategory: FC<{ screen?: M8Screen; category: M8ActivityCateg
   const activities = screen.activities.filter((x) => x.categories.some((activityCategory) => activityCategory === category.id))
 
   return (
-    <div className={cx(categoryClass, 'category', open && 'open')} onClick={() => onOpenChange(!open)}>
+    <div className={cx(categoryClass, 'category')}>
       <h2>{category.title}</h2>
       {activities.map((x) => (
         <ActivityEntry key={`${category}-${x.id}`} screen={screen} activity={x} />
@@ -115,35 +121,79 @@ export const ActivityCategory: FC<{ screen?: M8Screen; category: M8ActivityCateg
   )
 }
 
-const selectionClass = css`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 16px;
-  padding-top: 45px;
-  min-height: 0;
-  width: fit-content;
-  max-width: 550px;
-  margin-left: 20px;
-  overflow-y: scroll;
-  > h3 {
-    margin: 0 0 15px 0;
+const activityClass = css`
+  position: relative;
+  background: ${style.themeColors.background.default};
+
+  > .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+    width: fit-content;
+    max-width: 550px;
+    max-height: 100vh;
+    margin-left: 20px;
+    overflow-y: scroll;
+    > h3 {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  > .sidebar-title {
+    display: none;
+  }
+
+  @media (max-width: 1600px) {
+    & {
+      max-width: 30px;
+      padding-right: 30px;
+      border-left: 1px solid ${style.themeColors.line.default};
+
+      > .sidebar-title {
+        display: block;
+        transform: translateX(5px) rotate(90deg);
+        padding-left: 30px;
+        z-index: 2;
+      }
+
+      > .content {
+        z-index: 1;
+        position: absolute;
+        background: ${style.themeColors.background.default};
+        left: 20px;
+        opacity: 0;
+        transform: translateX(-100%);
+        max-width: calc(90vw - 125px);
+        transition: 0.25s ease transform, 0.25s 0.1s ease opacity;
+        pointer-events: none;
+        padding-right: 30px;
+        border-right: 1px solid ${style.themeColors.line.default};
+        min-height: calc(100% - 45px);
+
+        > .sticky-fill {
+          z-index: 2;
+          min-height: 25px;
+          width: 100%;
+          position: sticky;
+          top: 0;
+          background-color: ${style.themeColors.background.default};
+        }
+      }
+
+      &:hover, &>.content:hover {
+        overflow-x: visible;
+        > .content {
+          opacity: 1;
+          transform: translateX(0);
+          pointer-events: all;
+        }
+      }
+    }
   }
 `
 
 export const ActivitySelection: FC = () => {
-  const [open, setOpen] = useState<ActivityCategoryId>()
-  const composeOpenChangeHandler = useCallback(
-    (category: ActivityCategoryId) => (value: boolean) => {
-      if (value) {
-        setOpen(category)
-      } else if (open === category) {
-        setOpen(undefined)
-      }
-    },
-    [open],
-  )
-
   const { screen } = useAppParams()
 
   const { screen: usedScreen, categories } = useMemo(() => {
@@ -159,10 +209,14 @@ export const ActivitySelection: FC = () => {
     }
   }, [screen])
   return (
-    <div className={selectionClass}>
-      {categories.map((x) => (
-        <ActivityCategory key={x.id} screen={usedScreen} category={x} open={true} onOpenChange={composeOpenChangeHandler(x.id)} />
-      ))}
+    <div className={activityClass}>
+      <div className="content">
+        <div className="sticky-fill" />
+        {categories.map((x) => (
+          <ActivityCategory key={x.id} screen={usedScreen} category={x} />
+        ))}
+      </div>
+      <h3 className="sidebar-title">Activities</h3>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { type FC, useEffect, useState } from 'react'
 import { style } from '../app/style/style'
 
 const containerClass = css`
+  z-index: -1;
   position: relative;
   flex: 1;
   display: flex;
