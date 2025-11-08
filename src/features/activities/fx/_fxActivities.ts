@@ -1,5 +1,5 @@
-import { assignMidi } from '../eq/assignMidi'
-import { assignTouch } from './assignMidi'
+import { assignMidi } from './assignMidi'
+import { assignTouch } from './assignTouch'
 import { clearAllMuteSolo } from './clearAllMuteSolo'
 import { continuePlay } from './continuePlay'
 import { editLarge } from './editLarge'
