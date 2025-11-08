@@ -178,7 +178,6 @@ const SvgComponent: FC<{
         num = requestAnimationFrame(onAnimationFrame)
         return
       }
-      console.log(`lastIdx: ${lastIndex} | idx: ${idx} | ${video.currentTime} | `, frame)
       lastIndex += 1
 
       updateButtonClass(buttonLeft, isLeft(frame[1]))

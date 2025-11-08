@@ -2,7 +2,6 @@ import type { Activity } from './activity'
 import { chainScreen } from './screens/chain'
 import { equalizerBankScreen } from './screens/equalizer'
 import { fxSettingsScreen } from './screens/fx-settings'
-import { globalShortcuts } from './screens/global'
 import { grooveScreen } from './screens/groove'
 import { instrumentScreen } from './screens/instrument'
 import { instrumentModsScreen } from './screens/instrument-mods'
@@ -50,15 +49,9 @@ export const categories = [
     id: 'instrument',
     name: 'Instruments',
   },
-  {
-    id: 'misc',
-    name: 'Global',
-  },
 ] as const
 
 export const screens = [
-  globalShortcuts,
-
   projectScreen,
   midiMappingsScreen,
   midiSettingsScreen,

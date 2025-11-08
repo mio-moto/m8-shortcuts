@@ -42,7 +42,6 @@ const entryClass = css`
 const ScreenEntry: FC<{ screen: M8Screen }> = ({ screen }) => {
   const params = useAppParams()
   const navigate = useNavigate()
-  console.log(params)
   return (
     <div
       className={cx(entryClass, 'entry', params.screen === screen.id && 'active')}
@@ -117,7 +116,6 @@ const selectionClass = css`
 export const ScreenSelection: FC = () => {
   return (
     <div className={cx('right', selectionClass)}>
-      <ScreenCategory category="misc" />
       <ScreenCategory category="system" />
       <ScreenCategory category="sequencer" />
       <ScreenCategory category="instrument" />
