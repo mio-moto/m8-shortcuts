@@ -1,11 +1,12 @@
-import Video from '#assets/activity/groove/copy.webm'
+import Data from '#assets/activity/groove/copy.json'
+import Video from '#assets/activity/groove/copy.mp4'
 import type { Activity } from '../../activity'
 
 export const copy = {
   id: 'copy-value',
   title: 'Copy',
   description: 'When one or more values are selected, copies the selection into the clipboard',
-  media: { video: Video },
+  media: { video: Video, events: Data as [number, number][] },
   keypress: ['opt'],
   categories: ['selection'],
 } as const satisfies Activity
