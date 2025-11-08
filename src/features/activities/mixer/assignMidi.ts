@@ -2,7 +2,7 @@ import Data from '#assets/activity/mixer/assign-midi.json'
 import Video from '#assets/activity/mixer/assign-midi.mp4'
 import type { Activity } from '../../activity'
 
-export const assignTouch = {
+export const assignMidi = {
   id: 'assign-midi',
   title: 'Assign MIDI CC to Parameter',
   description: 'Assign a MIDI CC to a selected parameter',

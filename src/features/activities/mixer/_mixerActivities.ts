@@ -1,4 +1,4 @@
-import { assignMidi } from '../instrument/assignMidi'
+import { assignMidi } from './assignMidi'
 import { assignTouch } from './assignTouch'
 import { clearAllMuteSolo } from './clearAllMuteSolo'
 import { continuePlay } from './continuePlay'
