@@ -6,6 +6,6 @@ export const makeCopy = <T extends string>({ video, events, description }: { vid
     title: 'Copy',
     description: description ?? 'When one or more values are selected, copies the selection into the clipboard',
     media: { video, events },
-    keypress: ['opt'],
+    keypress: [['shift-hold', 'opt']],
     categories: ['selection'],
   }) as const satisfies Activity

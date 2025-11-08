@@ -7,6 +7,6 @@ export const muteEq = {
   title: 'Mute EQ',
   description: 'Enables / disables the current EQ',
   media: { video: Video, events: Data as [number, number][] },
-  keypress: ['edit', 'after', 'edit'],
+  keypress: ['2x', 'edit'],
   categories: ['misc'],
 } as const satisfies Activity
