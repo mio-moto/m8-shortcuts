@@ -1,11 +1,12 @@
-import Video from '#assets/activity/chain/cut.webm'
+import Data from '#assets/activity/chain/cut.json'
+import Video from '#assets/activity/chain/cut.mp4'
 import type { Activity } from '../../activity'
 
 export const cut = {
   id: 'cut',
   title: 'Cut',
   description: 'Cuts out the value on the cursor or the entire selection.',
-  media: { video: Video },
+  media: { video: Video, events: Data as [number, number][] },
   keypress: [['opt', 'edit']],
   categories: ['selection'],
 } as const satisfies Activity

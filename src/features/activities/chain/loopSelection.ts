@@ -1,11 +1,12 @@
-import Video from '#assets/activity/chain/loop-selection.webm'
+import Data from '#assets/activity/chain/loop-selection.json'
+import Video from '#assets/activity/chain/loop-selection.mp4'
 import type { Activity } from '../../activity'
 
 export const loopSelection = {
   id: 'loop',
   title: 'Loop Selection',
   description: 'When a few chains are currently selected, loops these chains.',
-  media: { video: Video },
+  media: { video: Video, events: Data as [number, number][] },
   keypress: ['play'],
   categories: ['play'],
 } as const satisfies Activity
