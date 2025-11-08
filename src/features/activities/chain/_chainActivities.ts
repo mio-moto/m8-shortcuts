@@ -1,22 +1,12 @@
-import { clearAllMuteSolo } from './clearAllMuteSolo'
 import { clone } from './clone'
-import { continuePlay } from './continuePlay'
-import { copy } from './copy'
-import { cut } from './cut'
-import { editLarge } from './editLarge'
-import { editSmall } from './editSmall'
-import { enterSelection } from './enterSelection'
+import { clearMutes, continuePlay, copy, cut, editLarge, editSmall, enterSelection, mute, navigate, paste, play, soloTrack } from './common'
+
 import { insertNew } from './insertNew'
 import { insertUnused } from './insertUnused'
 import { loopSelection } from './loopSelection'
 import { loopSelectionTracks } from './loopSelectionTracks'
-import { muteTrack } from './muteTrack'
-import { navigate } from './navigate'
 import { navigateChain } from './navigateChain'
 import { navigateTrack } from './navigateTrack'
-import { paste } from './paste'
-import { play } from './play'
-import { soloTrack } from './soloTrack'
 
 export const chainActivities = [
   navigate,
@@ -27,9 +17,9 @@ export const chainActivities = [
   continuePlay,
   loopSelection,
   loopSelectionTracks,
-  muteTrack,
+  mute,
   soloTrack,
-  clearAllMuteSolo,
+  clearMutes,
 
   insertNew,
   editSmall,

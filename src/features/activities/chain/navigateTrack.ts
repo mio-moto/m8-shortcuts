@@ -7,6 +7,6 @@ export const navigateTrack = {
   title: 'Next / prev track',
   description: 'Navigates to previous or next track',
   media: { video: Video, events: Data as [number, number][] },
-  keypress: [['shift', 'left'], 'or', ['shift', 'right']],
+  keypress: [['opt-hold', 'left'], 'or', ['opt-hold', 'right']],
   categories: ['navigation'],
 } as const satisfies Activity

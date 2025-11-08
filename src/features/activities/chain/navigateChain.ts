@@ -7,6 +7,6 @@ export const navigateChain = {
   title: 'Next / prev chain',
   description: 'Navigates to previous or next chain in the song',
   media: { video: Video, events: Data as [number, number][] },
-  keypress: [['shift', 'up'], 'or', ['shift', 'down']],
+  keypress: [['opt-hold', 'up'], 'or', ['opt-hold', 'down']],
   categories: ['navigation'],
 } as const satisfies Activity

@@ -7,6 +7,6 @@ export const clone = {
   title: 'Clone selection',
   description: 'Clones the selected chains into new chains, keeping the phrase numbers.',
   media: { video: Video, events: Data as [number, number][] },
-  keypress: [['shift', 'opt'], 'after', ['shift', 'edit']],
+  keypress: [['shift-hold', 'edit']],
   categories: ['selection'],
 } as const satisfies Activity

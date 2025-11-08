@@ -7,6 +7,6 @@ export const insertUnused = {
   title: 'Insert unused Phrase',
   description: 'Inserts a new, unused phrase into the current cell.',
   media: { video: Video, events: Data as [number, number][] },
-  keypress: ['edit', 'after', 'edit'],
+  keypress: ['2x', 'edit'],
   categories: ['edit'],
 } as const satisfies Activity
