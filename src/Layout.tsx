@@ -32,9 +32,9 @@ export const Layout: FC = () => {
 
   return (
     <>
-      <ActivityScreen screen={screen} activity={activity} />
       <ScreenSelection />
       <ActivitySelection />
+      <ActivityScreen screen={screen} activity={activity} />
     </>
   )
 }

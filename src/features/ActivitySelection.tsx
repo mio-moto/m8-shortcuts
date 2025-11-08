@@ -129,14 +129,6 @@ const selectionClass = css`
   > h3 {
     margin: 0 0 15px 0;
   }
-
-  @media(min-width: 2200px) {
-    margin-left: 100px;
-  }
-
-  @media(min-width: 2500px) {
-    margin-left: 10%;
-  }
 `
 
 export const ActivitySelection: FC = () => {

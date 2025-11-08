@@ -58,6 +58,7 @@ const appClass = css`
       gap: 16px;
       overflow: auto;
       scrollbar-gutter: stable;
+      justify-content: flex-start;
 
 
       > .center {

@@ -98,18 +98,10 @@ const selectionClass = css`
   margin-right: 20px;
   overflow-y: scroll;
   scrollbar-gutter: stable;
-  padding-top: 45px;
+  padding: 45px 0 0 32px;
 
   > h3 {
     margin: 0 0 15px 0;
-  }
-
-  @media (min-width: 2200px) {
-    margin-right: 100px;
-  }
-
-  @media(min-width: 2500px) {
-    margin-right: 10%;
   }
 `
 

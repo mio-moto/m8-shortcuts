@@ -1,21 +1,12 @@
-import { assignMidi } from './assignMidi'
-import { assignTouch } from './assignTouch'
-import { clearAllMuteSolo } from './clearAllMuteSolo'
-import { continuePlay } from './continuePlay'
-import { editLarge } from './editLarge'
-import { editSmall } from './editSmall'
-import { muteTrack } from './muteTrack'
-import { navigate } from './navigate'
-import { setDefault } from './setDefault'
-import { soloTrack } from './soloTrack'
+import { assignMidi, assignTouch, clearMutes, continuePlay, editLarge, editSmall, mute, navigate, setDefault, soloTrack } from './common'
 
 export const fxActivities = [
   navigate,
 
   continuePlay,
-  muteTrack,
+  mute,
   soloTrack,
-  clearAllMuteSolo,
+  clearMutes,
 
   editSmall,
   editLarge,
