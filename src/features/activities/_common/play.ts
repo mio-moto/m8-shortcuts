@@ -4,7 +4,7 @@ export const makePlay = <T extends string>({ video, events, description }: { vid
   ({
     id: 'play',
     title: 'Play',
-    description: description ?? 'Plays / stops the current phrase.',
+    description: description ?? 'Plays / stops the current track without the other tracks.',
     media: { video, events },
     keypress: [['play']],
     categories: ['play'],

@@ -1,6 +1,6 @@
 import type { Activity } from '../../activity'
 
-export const makeAssignEq = <T extends string>({ video, events, description }: { video: string; events: [number, number][]; description?: T }) =>
+export const makeAssignMidi = <T extends string>({ video, events, description }: { video: string; events: [number, number][]; description?: T }) =>
   ({
     id: 'assign-midi',
     title: 'Assign Touch-Axis to MIDI',
