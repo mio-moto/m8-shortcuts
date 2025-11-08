@@ -23,6 +23,7 @@ import { nextInstrumentQuick } from './nextInstrumentQuick'
 import { paste } from './paste'
 import { play } from './play'
 import { preview } from './preview'
+import { randomize } from './randomize'
 import { setDefault } from './setDefault'
 import { soloTrack } from './soloTrack'
 import { undoPaste } from './undoPaste'
@@ -46,6 +47,7 @@ export const instrumentActivities = [
   copy,
   paste,
   undoPaste,
+  randomize,
 
   fmChangeAlgo,
   fmChangeOperator,
