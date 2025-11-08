@@ -12,6 +12,8 @@ const containerClass = css`
   isolation: isolate;
   width: max-content;
 
+  padding: 0 32px;
+
   > h1 {
     margin: 0;
   }

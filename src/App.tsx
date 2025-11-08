@@ -55,7 +55,7 @@ const appClass = css`
     > .panels {
       flex: 1;
       display: flex;
-      gap: 48px;
+      gap: 16px;
       overflow: auto;
       scrollbar-gutter: stable;
 
